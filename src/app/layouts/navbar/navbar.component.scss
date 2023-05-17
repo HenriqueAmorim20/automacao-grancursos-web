@@ -1,0 +1,113 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  padding: 0.5rem 1rem;
+  height: fit-content;
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    padding-bottom: 0.5rem;
+    height: 4rem;
+    width: 4rem;
+    color: black;
+  }
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+
+    .menu-icon-bar {
+      height: 3px;
+      width: 35px;
+      background-color: black;
+      display: block;
+      margin: 3px 0px;
+      transition: transform 0.5s, opacity 0.5s ease-in-out;
+      transform: none;
+    }
+
+    .first-bar-active {
+      transform: translateY(0.55rem) rotate(-45deg);
+    }
+    .second-bar-active {
+      transform: rotate(45deg);
+    }
+    .third-bar-active {
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+  }
+}
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  backdrop-filter: blur(20px);
+  padding: 0 10%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+
+  .menu-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin: 0rem 1.5rem;
+    color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.drawer-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .drawer {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .menu-item {
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    .navbar-logo {
+      right: 0.5rem;
+      bottom: 0.5rem;
+    }
+
+    .menu-icon {
+      right: 0.5rem;
+      top: 0.5rem;
+    }
+  }
+}

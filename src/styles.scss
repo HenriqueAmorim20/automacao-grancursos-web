@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+// import font example
+// @font-face {
+//   font-family: "Example";
+//   src: url("~/assets/fonts/example.ttf") format("truetype");
+// }
+
+:root {
+  --example: #fff;
+}
+
+body {
+  background-color: var(--example);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}

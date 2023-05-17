@@ -1,0 +1,48 @@
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0rem 5rem 1rem 3rem;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    h1 {
+      font-family: 'Alata';
+      font-size: 3rem;
+      letter-spacing: -3px;
+      margin-right: 1rem;
+    }
+
+    #copy {
+      transform: translateY(40%);
+    }
+  }
+
+  .dev {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transform: translateY(30%);
+
+    img {
+      transform: translateY(10%);
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #footer {
+    padding: 0rem 4rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #footer {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
